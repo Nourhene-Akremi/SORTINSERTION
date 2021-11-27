@@ -1,0 +1,24 @@
+ALGORITHM sortinsertion
+VAR
+t:ARRAY_OF integer[50];
+n,p,temp:INTEGER;
+BEGIN
+
+write("give table size");
+read(n);
+
+FOR i FROM 0 TO n STEP 1  DO
+write("t[i=]");
+read(t[i]);
+END_FOR
+
+FOR i FROM 2 TO n STEP 1  DO
+temp:=t[i];
+p:=i-1;
+WHILE (t[p]>temp) and(p>=1) DO
+ t[p+1]:=t[p];
+ p:=p-1;
+END_WHILE
+ t[p+1]:=temp;
+END_FOR
+END
